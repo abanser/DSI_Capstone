@@ -31,4 +31,4 @@
 
 
 
-![alt text](https://github.com/abanser/DSI_Capstone/images/Strava_Running_Segments.png)
+![alt text](https://github.com/abanser/DSI_Capstone/tree/master/images/Strava_Running_Segments.png)
