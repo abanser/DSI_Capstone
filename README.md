@@ -1,65 +1,34 @@
-# <center> Preliminary Proposal for Capstones </center>
+# <center> Final Proposal for Capstone </center>
 
-## <center> Proposal 1 - Strava meets Zillow </center>
-
-### Description
-This project will research correlations between workout habits of residents of a given area and real estate value. My general intuition is that there exists a positive correlation between these features. I plan to quantify the workout habits of a region by aggregating Strava segment data. For real estate, I plan to use Zillow home value estimates and or home value projections.
-
-### Question
-Is there a correlation between population workout habits and real estate value? If so, how strong or how weak? Does this correlation vary between areas? Is there any other interesting information I can learn from overlaying these sets of data?
-
-### Presentation
-I will present my work with plots and presentations slides. If I have enough time I will attempt D3 visualization
-
-### Data Sources
-My data sources are Strava's API and Zillow's API. Both tools have adequate documentation for their APIs which I plan to take advantage of.
-
-### Next Steps
-Start gathering the data - I will start locally with Austin and complete a full cycle of analysis. If I have enough time, I will broaden the scope to other cities in Texas and other states.
+## <center> Strava meets Zillow </center>
 
 
-## <center> Proposal 2 - YouTube - Why is Ryan's Toy Review so popular? </center>
 
-### Description
+ - What are you trying to do? My Capstone project seeks to research a correlation between workout habits of the population of Austin, TX as modeled by Strava segment data and real estate prices as aggregated by Zillow.
 
-Ryan's Toy Review is one of the most popular YouTube channels, with over 12 million subscribers and billions of views. It features Ryan, a 7 year old and his family, opening up toys and playing. Most of the videos are recorded with camera phones. On the surface, there is nothing special about these videos. However, Forbes reported that Ryan's channel made about $11 million dollars in revenue between June 1, 2016, and June 1, 2017.
+- How has this problem been solved before? While modeling real estate trends and workout habits have been solved separately before, I've not found an open source project which merges the two datasets. I am hoping to find something interesting after overlaying these sets of data
 
-I am curious to find out what makes channels go viral? My intuition is that popular YouTube channels have a viral video - the equivalent of a hit song, which introduce people to these channels and lead to their popularity.
+- Who cares? If you're successful, what will the impact be? The results of this project can be useful for
+  - Strava: By leveraging the data they generate in a creative way outside their current business model, Strava can gain more business value.
+  - Zillow: By including variables of workout habits in their datasets, Zillow can potentially augment existing models
+  - City of Austin: The City of Austin can get insights into where to build new parks for the city
 
-### Question
 
-Is there a common characteristic between popular channels?
+- How will you present your work?
+  - Presentation slides and J3 or Bokeh visualization given the time
 
-### Presentation
 
-I will present my work with plots and presentations slides. If I have enough time I will attempt D3 visualization
+- What are your data sources? What is the size of your dataset, and what is your storage format?
+  - My data sources are Zillow, Strava API, Google geocoding API and US census bureau. After my first pass run, I have several thousand segment data points. I will store my data in a PostGres SQL database.
 
-### Data Sources
 
-My data sources are YouTube website crawling and YouTube API.
+- What are potential problems with your capstone, and what have you done to mitigate these problems?
+  - Potential problems are not getting enough data to draw a conclusion on my initial hypothesis. If I don't get enough data from Austin, I will consider running the analysis on a larger city.
 
-### Next Steps
 
-I will start gathering data on videos from Ryan's Toy Reviews channel. I will then broaden my scope to other popular channels and see if I can generalize certain characteristics of these YouTube celebrities.
+- What is the next thing you need to work on?
+  - I have already downloaded segment data from Strava and house price data from Zillow. I have created a few initial plots. See below - The plot indicates Strava running segments in Austin, TX. My next step is to merge these data and start analyzing them.
 
-## <center> Proposal 3 - Do happy employees translate to successful companies? </center>
 
-### Description
 
-Is there an incentive for employers to treat their employees well? Do happy employees translate into success for the company? Using Glassdoor employer ratings, I can get a sense of how happy employees are at a company. With that information, I can research if there exists a correlation between employee happiness and company success? *I am still reasoning about a good measure of company success to use here. My first attempt is to use stock trends for publicly traded companies.*
-
-### Question
-
-Do happy employees lead to successfull companies?
-
-### Presentation
-
-I will present my work with plots and presentations slides. If I have enough time I will attempt D3 visualization
-
-### Data Sources
-
-My data sources are Glassdoor website crawling and stock market trends overtime.
-
-### Next Steps
-
-Get company ratings from Glassdoor. Restrict only to public companies.
+![alt text](https://https://github.com/abanser/DSI_Capstone/images/Strava_Running_Segments.png)
