@@ -18,7 +18,7 @@ Multilevel Models](https://dc.uwm.edu/cgi/viewcontent.cgi?referer=https://www.go
 
     The main conclusion from these studies is that proximity to parks are mostly benefitial for real estate value. However, if     parks are too big or too busy, the effect can be negative. While I expect the presence of parks to be a factor in the         workout habits of the population I am studying, the question I hope to answer extends to an entire city, including the     population and real estate not close to parks. I hope to find something interesting after overlaying these sets of data
 
-#### Usefullness
+#### Usefulness
 
  The results of this project can be useful for
   - Strava: By leveraging the data they generate in a creative way outside their current business model, Strava can gain more business value.
