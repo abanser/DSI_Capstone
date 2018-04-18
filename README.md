@@ -5,7 +5,7 @@
 
 
 #### Summary
- My Capstone project researches for a correlation between workout habits of the population of Austin, TX as modeled by Strava segment data and real estate prices as aggregated by Zillow.
+ My Capstone project researches the correlation between workout habits of the population of Austin, TX as modeled by Strava segment data and real estate prices as aggregated by Zillow.
 
 #### Background Research
  Several research studies have been done on the effect of proximity to parks and green spaces on real estate value. A few examples are listed below. 
