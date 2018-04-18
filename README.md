@@ -9,7 +9,11 @@
 - How has this problem been solved before? 
 Several research studies have been done on the effect of proximity to parks and green spaces on real estate value. A few examples are listed below. 
 
- ![Neighborhood parks and residential property values in Greenville, SC](https://ageconsearch.umn.edu/bitstream/15446/1/33030487.pdf)
+- ![Neighborhood parks and residential property values in Greenville, SC](https://ageconsearch.umn.edu/bitstream/15446/1/33030487.pdf)
+- ![Property Prices and Urban Forest Amenities](http://digilib.itb.ac.id/files/JBPTITBCHE/disk1/49/jbptitbche-gdl-jou-2004-liisatyrva-2438-property-s.pdf)
+- ![Assessing the Effect of Parks on Surrounding
+Property Values Using Hedonic Models and
+Multilevel Models](https://dc.uwm.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&httpsredir=1&article=2296&context=etd)
  
 
 
