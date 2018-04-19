@@ -27,7 +27,7 @@ Multilevel Models](https://dc.uwm.edu/cgi/viewcontent.cgi?referer=https://www.go
 
 
 #### Presentation
- Presentation slides and J3 or Bokeh visualization given the time
+ Presentation slides and D3 or Bokeh visualization given the time
 
 
 #### Data Sources
