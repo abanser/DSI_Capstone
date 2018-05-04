@@ -1,0 +1,557 @@
+CREATE DATABASE strava_zillow;
+CREATE USER tom WITH PASSWORD 'jerry';
+
+
+\connect strava_zillow;
+
+DROP TABLE segment;
+CREATE TABLE segment (
+id bigserial primary key,
+seg_id INTEGER UNIQUE,
+resource_state INTEGER NULL,
+name VARCHAR NULL,
+climb_category INTEGER NULL,
+climb_category_desc VARCHAR NULL,
+start_lat NUMERIC NULL,
+start_long NUMERIC NULL,
+end_lat NUMERIC NULL,
+end_long NUMERIC NULL,
+elev_difference DECIMAL NULL,
+distance DECIMAL NULL,
+points VARCHAR NULL,
+activity_type VARCHAR NULL,
+average_grade DECIMAL NULL,
+maximum_grade DECIMAL NULL,
+elevation_high DECIMAL NULL,
+elevation_low DECIMAL NULL,
+city VARCHAR NULL,
+state VARCHAR NULL,
+country VARCHAR NULL,
+private VARCHAR NULL,
+hazardous VARCHAR NULL,
+starred VARCHAR NULL,
+created_at VARCHAR NULL,
+updated_at VARCHAR NULL,
+total_elevation_gain VARCHAR NULL,
+effort_count INTEGER NULL,
+athlete_count INTEGER NULL,
+star_count INTEGER NULL,
+zipcode VARCHAR NULL);
+
+
+
+DROP TABLE segment_details;
+CREATE TABLE segment_details (
+id bigserial primary key,
+seg_id INTEGER UNIQUE,
+activity_type VARCHAR NULL,
+maximum_grade DECIMAL NULL,
+elevation_high DECIMAL NULL,
+elevation_low DECIMAL NULL,
+city VARCHAR NULL,
+state VARCHAR NULL,
+country VARCHAR NULL,
+private VARCHAR NULL,
+hazardous VARCHAR NULL,
+date_created VARCHAR NULL,
+date_updated VARCHAR NULL,
+total_elevation_gain VARCHAR NULL,
+effort_count INTEGER NULL,
+athlete_count INTEGER NULL,
+star_count INTEGER NULL);
+
+
+
+CREATE TABLE zillow_zhvi (
+regionid VARCHAR NULL,
+zipcode VARCHAR NULL,
+state VARCHAR NULL,
+metro VARCHAR NULL,
+county VARCHAR NULL,
+city VARCHAR NULL,
+sizerank VARCHAR NULL,
+zhvi INTEGER NULL,
+mom DECIMAL NULL,
+qoq DECIMAL NULL,
+yoy DECIMAL NULL,
+fiveyear DECIMAL NULL,
+tenyear DECIMAL NULL,
+peakmonth VARCHAR NULL,
+peakquarter VARCHAR NULL,
+peakzhvi INTEGER NULL,
+pctfallfrompeak DECIMAL NULL,
+LastTimeAtCurrZHVI VARCHAR NULL
+);
+
+
+
+CREATE TABLE zipstats (
+zipcode VARCHAR NULL,
+y_2016 INTEGER NULL,
+y_2015 INTEGER NULL,
+y_2014 INTEGER NULL,
+y_2013 INTEGER NULL,
+y_2012 INTEGER NULL,
+y_2011 INTEGER NULL,
+y_2010 INTEGER NULL,
+aggregate INTEGER NULL
+);
+
+
+
+CREATE TABLE zillow_median_sqft(
+RegionID VARCHAR NULL,
+zipcode VARCHAR NULL,
+City VARCHAR NULL,
+State VARCHAR NULL,
+Metro VARCHAR NULL,
+CountyName VARCHAR NULL,
+SizeRank INTEGER NULL,
+ninetysix_Apr INTEGER NULL,
+ninetysix_May INTEGER NULL,
+ninetysix_Jun INTEGER NULL,
+ninetysix_Jul INTEGER NULL,
+ninetysix_Aug INTEGER NULL,
+ninetysix_Sep INTEGER NULL,
+ninetysix_Oct INTEGER NULL,
+ninetysix_Nov INTEGER NULL,
+ninetysix_Dec INTEGER NULL,
+ninetysev_Jan INTEGER NULL,
+ninetysev_Feb INTEGER NULL,
+ninetysev_Mar INTEGER NULL,
+ninetysev_Apr INTEGER NULL,
+ninetysev_May INTEGER NULL,
+ninetysev_Jun INTEGER NULL,
+ninetysev_Jul INTEGER NULL,
+ninetysev_Aug INTEGER NULL,
+ninetysev_Sep INTEGER NULL,
+ninetysev_Oct INTEGER NULL,
+ninetysev_Nov INTEGER NULL,
+ninetysev_Dec INTEGER NULL,
+ninetyeight_Jan INTEGER NULL,
+ninetyeight_Feb INTEGER NULL,
+ninetyeight_Mar INTEGER NULL,
+ninetyeight_Apr INTEGER NULL,
+ninetyeight_May INTEGER NULL,
+ninetyeight_Jun INTEGER NULL,
+ninetyeight_Jul INTEGER NULL,
+ninetyeight_Aug INTEGER NULL,
+ninetyeight_Sep INTEGER NULL,
+ninetyeight_Oct INTEGER NULL,
+ninetyeight_Nov INTEGER NULL,
+ninetyeight_Dec INTEGER NULL,
+ninetynine_Jan INTEGER NULL,
+ninetynine_Feb INTEGER NULL,
+ninetynine_Mar INTEGER NULL,
+ninetynine_Apr INTEGER NULL,
+ninetynine_May INTEGER NULL,
+ninetynine_Jun INTEGER NULL,
+ninetynine_Jul INTEGER NULL,
+ninetynine_Aug INTEGER NULL,
+ninetynine_Sep INTEGER NULL,
+ninetynine_Oct INTEGER NULL,
+ninetynine_Nov INTEGER NULL,
+ninetynine_Dec INTEGER NULL,
+twoth_Jan INTEGER NULL,
+twoth_Feb INTEGER NULL,
+twoth_Mar INTEGER NULL,
+twoth_Apr INTEGER NULL,
+twoth_May INTEGER NULL,
+twoth_Jun INTEGER NULL,
+twoth_Jul INTEGER NULL,
+twoth_Aug INTEGER NULL,
+twoth_Sep INTEGER NULL,
+twoth_Oct INTEGER NULL,
+twoth_Nov INTEGER NULL,
+twoth_Dec INTEGER NULL,
+twothone_Jan INTEGER NULL,
+twothone_Feb INTEGER NULL,
+twothone_Mar INTEGER NULL,
+twothone_Apr INTEGER NULL,
+twothone_May INTEGER NULL,
+twothone_Jun INTEGER NULL,
+twothone_Jul INTEGER NULL,
+twothone_Aug INTEGER NULL,
+twothone_Sep INTEGER NULL,
+twothone_Oct INTEGER NULL,
+twothone_Nov INTEGER NULL,
+twothone_Dec INTEGER NULL,
+twothtwo_Jan INTEGER NULL,
+twothtwo_Feb INTEGER NULL,
+twothtwo_Mar INTEGER NULL,
+twothtwo_Apr INTEGER NULL,
+twothtwo_May INTEGER NULL,
+twothtwo_Jun INTEGER NULL,
+twothtwo_Jul INTEGER NULL,
+twothtwo_Aug INTEGER NULL,
+twothtwo_Sep INTEGER NULL,
+twothtwo_Oct INTEGER NULL,
+twothtwo_Nov INTEGER NULL,
+twothtwo_Dec INTEGER NULL,
+twoththree_Jan INTEGER NULL,
+twoththree_Feb INTEGER NULL,
+twoththree_Mar INTEGER NULL,
+twoththree_Apr INTEGER NULL,
+twoththree_May INTEGER NULL,
+twoththree_Jun INTEGER NULL,
+twoththree_Jul INTEGER NULL,
+twoththree_Aug INTEGER NULL,
+twoththree_Sep INTEGER NULL,
+twoththree_Oct INTEGER NULL,
+twoththree_Nov INTEGER NULL,
+twoththree_Dec INTEGER NULL,
+twothfour_Jan INTEGER NULL,
+twothfour_Feb INTEGER NULL,
+twothfour_Mar INTEGER NULL,
+twothfour_Apr INTEGER NULL,
+twothfour_May INTEGER NULL,
+twothfour_Jun INTEGER NULL,
+twothfour_Jul INTEGER NULL,
+twothfour_Aug INTEGER NULL,
+twothfour_Sep INTEGER NULL,
+twothfour_Oct INTEGER NULL,
+twothfour_Nov INTEGER NULL,
+twothfour_Dec INTEGER NULL,
+twothfive_Jan INTEGER NULL,
+twothfive_Feb INTEGER NULL,
+twothfive_Mar INTEGER NULL,
+twothfive_Apr INTEGER NULL,
+twothfive_May INTEGER NULL,
+twothfive_Jun INTEGER NULL,
+twothfive_Jul INTEGER NULL,
+twothfive_Aug INTEGER NULL,
+twothfive_Sep INTEGER NULL,
+twothfive_Oct INTEGER NULL,
+twothfive_Nov INTEGER NULL,
+twothfive_Dec INTEGER NULL,
+twothsix_Jan INTEGER NULL,
+twothsix_Feb INTEGER NULL,
+twothsix_Mar INTEGER NULL,
+twothsix_Apr INTEGER NULL,
+twothsix_May INTEGER NULL,
+twothsix_Jun INTEGER NULL,
+twothsix_Jul INTEGER NULL,
+twothsix_Aug INTEGER NULL,
+twothsix_Sep INTEGER NULL,
+twothsix_Oct INTEGER NULL,
+twothsix_Nov INTEGER NULL,
+twothsix_Dec INTEGER NULL,
+twothsev_Jan INTEGER NULL,
+twothsev_Feb INTEGER NULL,
+twothsev_Mar INTEGER NULL,
+twothsev_Apr INTEGER NULL,
+twothsev_May INTEGER NULL,
+twothsev_Jun INTEGER NULL,
+twothsev_Jul INTEGER NULL,
+twothsev_Aug INTEGER NULL,
+twothsev_Sep INTEGER NULL,
+twothsev_Oct INTEGER NULL,
+twothsev_Nov INTEGER NULL,
+twothsev_Dec INTEGER NULL,
+twotheight_Jan INTEGER NULL,
+twotheight_Feb INTEGER NULL,
+twotheight_Mar INTEGER NULL,
+twotheight_Apr INTEGER NULL,
+twotheight_May INTEGER NULL,
+twotheight_Jun INTEGER NULL,
+twotheight_Jul INTEGER NULL,
+twotheight_Aug INTEGER NULL,
+twotheight_Sep INTEGER NULL,
+twotheight_Oct INTEGER NULL,
+twotheight_Nov INTEGER NULL,
+twotheight_Dec INTEGER NULL,
+twothnine_Jan INTEGER NULL,
+twothnine_Feb INTEGER NULL,
+twothnine_Mar INTEGER NULL,
+twothnine_Apr INTEGER NULL,
+twothnine_May INTEGER NULL,
+twothnine_Jun INTEGER NULL,
+twothnine_Jul INTEGER NULL,
+twothnine_Aug INTEGER NULL,
+twothnine_Sep INTEGER NULL,
+twothnine_Oct INTEGER NULL,
+twothnine_Nov INTEGER NULL,
+twothnine_Dec INTEGER NULL,
+twothten_Jan INTEGER NULL,
+twothten_Feb INTEGER NULL,
+twothten_Mar INTEGER NULL,
+twothten_Apr INTEGER NULL,
+twothten_May INTEGER NULL,
+twothten_Jun INTEGER NULL,
+twothten_Jul INTEGER NULL,
+twothten_Aug INTEGER NULL,
+twothten_Sep INTEGER NULL,
+twothten_Oct INTEGER NULL,
+twothten_Nov INTEGER NULL,
+twothten_Dec INTEGER NULL,
+twothelev_Jan INTEGER NULL,
+twothelev_Feb INTEGER NULL,
+twothelev_Mar INTEGER NULL,
+twothelev_Apr INTEGER NULL,
+twothelev_May INTEGER NULL,
+twothelev_Jun INTEGER NULL,
+twothelev_Jul INTEGER NULL,
+twothelev_Aug INTEGER NULL,
+twothelev_Sep INTEGER NULL,
+twothelev_Oct INTEGER NULL,
+twothelev_Nov INTEGER NULL,
+twothelev_Dec INTEGER NULL,
+twothtwelve_Jan INTEGER NULL,
+twothtwelve_Feb INTEGER NULL,
+twothtwelve_Mar INTEGER NULL,
+twothtwelve_Apr INTEGER NULL,
+twothtwelve_May INTEGER NULL,
+twothtwelve_Jun INTEGER NULL,
+twothtwelve_Jul INTEGER NULL,
+twothtwelve_Aug INTEGER NULL,
+twothtwelve_Sep INTEGER NULL,
+twothtwelve_Oct INTEGER NULL,
+twothtwelve_Nov INTEGER NULL,
+twothtwelve_Dec INTEGER NULL,
+twoththirt_Jan INTEGER NULL,
+twoththirt_Feb INTEGER NULL,
+twoththirt_Mar INTEGER NULL,
+twoththirt_Apr INTEGER NULL,
+twoththirt_May INTEGER NULL,
+twoththirt_Jun INTEGER NULL,
+twoththirt_Jul INTEGER NULL,
+twoththirt_Aug INTEGER NULL,
+twoththirt_Sep INTEGER NULL,
+twoththirt_Oct INTEGER NULL,
+twoththirt_Nov INTEGER NULL,
+twoththirt_Dec INTEGER NULL,
+twothfourt_Jan INTEGER NULL,
+twothfourt_Feb INTEGER NULL,
+twothfourt_Mar INTEGER NULL,
+twothfourt_Apr INTEGER NULL,
+twothfourt_May INTEGER NULL,
+twothfourt_Jun INTEGER NULL,
+twothfourt_Jul INTEGER NULL,
+twothfourt_Aug INTEGER NULL,
+twothfourt_Sep INTEGER NULL,
+twothfourt_Oct INTEGER NULL,
+twothfourt_Nov INTEGER NULL,
+twothfourt_Dec INTEGER NULL,
+twothfift_Jan INTEGER NULL,
+twothfift_Feb INTEGER NULL,
+twothfift_Mar INTEGER NULL,
+twothfift_Apr INTEGER NULL,
+twothfift_May INTEGER NULL,
+twothfift_Jun INTEGER NULL,
+twothfift_Jul INTEGER NULL,
+twothfift_Aug INTEGER NULL,
+twothfift_Sep INTEGER NULL,
+twothfift_Oct INTEGER NULL,
+twothfift_Nov INTEGER NULL,
+twothfift_Dec INTEGER NULL,
+twothsixt_Jan INTEGER NULL,
+twothsixt_Feb INTEGER NULL,
+twothsixt_Mar INTEGER NULL,
+twothsixt_Apr INTEGER NULL,
+twothsixt_May INTEGER NULL,
+twothsixt_Jun INTEGER NULL,
+twothsixt_Jul INTEGER NULL,
+twothsixt_Aug INTEGER NULL,
+twothsixt_Sep INTEGER NULL,
+twothsixt_Oct INTEGER NULL,
+twothsixt_Nov INTEGER NULL,
+twothsixt_Dec INTEGER NULL,
+twothsevent_Jan INTEGER NULL,
+twothsevent_Feb INTEGER NULL,
+twothsevent_Mar INTEGER NULL,
+twothsevent_Apr INTEGER NULL,
+twothsevent_May INTEGER NULL,
+twothsevent_Jun INTEGER NULL,
+twothsevent_Jul INTEGER NULL,
+twothsevent_Aug INTEGER NULL,
+twothsevent_Sep INTEGER NULL,
+twothsevent_Oct INTEGER NULL,
+twothsevent_Nov INTEGER NULL,
+twothsevent_Dec INTEGER NULL,
+twotheighteen_Jan INTEGER NULL,
+twotheighteen_Feb INTEGER NULL,
+twotheighteen_Mar INTEGER NULL
+);
+
+
+CREATE TABLE zillow_median_price(
+zipcode VARCHAR NULL,
+City VARCHAR NULL,
+State VARCHAR NULL,
+Metro VARCHAR NULL,
+CountyName VARCHAR NULL,
+SizeRank DECIMAL NULL,
+twothten_Jan DECIMAL NULL,
+twothten_Feb DECIMAL NULL,
+twothten_Mar DECIMAL NULL,
+twothten_Apr DECIMAL NULL,
+twothten_May DECIMAL NULL,
+twothten_Jun DECIMAL NULL,
+twothten_Jul DECIMAL NULL,
+twothten_Aug DECIMAL NULL,
+twothten_Sep DECIMAL NULL,
+twothten_Oct DECIMAL NULL,
+twothten_Nov DECIMAL NULL,
+twothten_Dec DECIMAL NULL,
+twothelev_Jan DECIMAL NULL,
+twothelev_Feb DECIMAL NULL,
+twothelev_Mar DECIMAL NULL,
+twothelev_Apr DECIMAL NULL,
+twothelev_May DECIMAL NULL,
+twothelev_Jun DECIMAL NULL,
+twothelev_Jul DECIMAL NULL,
+twothelev_Aug DECIMAL NULL,
+twothelev_Sep DECIMAL NULL,
+twothelev_Oct DECIMAL NULL,
+twothelev_Nov DECIMAL NULL,
+twothelev_Dec DECIMAL NULL,
+twothtwelve_Jan DECIMAL NULL,
+twothtwelve_Feb DECIMAL NULL,
+twothtwelve_Mar DECIMAL NULL,
+twothtwelve_Apr DECIMAL NULL,
+twothtwelve_May DECIMAL NULL,
+twothtwelve_Jun DECIMAL NULL,
+twothtwelve_Jul DECIMAL NULL,
+twothtwelve_Aug DECIMAL NULL,
+twothtwelve_Sep DECIMAL NULL,
+twothtwelve_Oct DECIMAL NULL,
+twothtwelve_Nov DECIMAL NULL,
+twothtwelve_Dec DECIMAL NULL,
+twoththirt_Jan DECIMAL NULL,
+twoththirt_Feb DECIMAL NULL,
+twoththirt_Mar DECIMAL NULL,
+twoththirt_Apr DECIMAL NULL,
+twoththirt_May DECIMAL NULL,
+twoththirt_Jun DECIMAL NULL,
+twoththirt_Jul DECIMAL NULL,
+twoththirt_Aug DECIMAL NULL,
+twoththirt_Sep DECIMAL NULL,
+twoththirt_Oct DECIMAL NULL,
+twoththirt_Nov DECIMAL NULL,
+twoththirt_Dec DECIMAL NULL,
+twothfourt_Jan DECIMAL NULL,
+twothfourt_Feb DECIMAL NULL,
+twothfourt_Mar DECIMAL NULL,
+twothfourt_Apr DECIMAL NULL,
+twothfourt_May DECIMAL NULL,
+twothfourt_Jun DECIMAL NULL,
+twothfourt_Jul DECIMAL NULL,
+twothfourt_Aug DECIMAL NULL,
+twothfourt_Sep DECIMAL NULL,
+twothfourt_Oct DECIMAL NULL,
+twothfourt_Nov DECIMAL NULL,
+twothfourt_Dec DECIMAL NULL,
+twothfift_Jan DECIMAL NULL,
+twothfift_Feb DECIMAL NULL,
+twothfift_Mar DECIMAL NULL,
+twothfift_Apr DECIMAL NULL,
+twothfift_May DECIMAL NULL,
+twothfift_Jun DECIMAL NULL,
+twothfift_Jul DECIMAL NULL,
+twothfift_Aug DECIMAL NULL,
+twothfift_Sep DECIMAL NULL,
+twothfift_Oct DECIMAL NULL,
+twothfift_Nov DECIMAL NULL,
+twothfift_Dec DECIMAL NULL,
+twothsixt_Jan DECIMAL NULL,
+twothsixt_Feb DECIMAL NULL,
+twothsixt_Mar DECIMAL NULL,
+twothsixt_Apr DECIMAL NULL,
+twothsixt_May DECIMAL NULL,
+twothsixt_Jun DECIMAL NULL,
+twothsixt_Jul DECIMAL NULL,
+twothsixt_Aug DECIMAL NULL,
+twothsixt_Sep DECIMAL NULL,
+twothsixt_Oct DECIMAL NULL,
+twothsixt_Nov DECIMAL NULL,
+twothsixt_Dec DECIMAL NULL,
+twothsevent_Jan DECIMAL NULL,
+twothsevent_Feb DECIMAL NULL,
+twothsevent_Mar DECIMAL NULL,
+twothsevent_Apr DECIMAL NULL,
+twothsevent_May DECIMAL NULL,
+twothsevent_Jun DECIMAL NULL,
+twothsevent_Jul DECIMAL NULL,
+twothsevent_Aug DECIMAL NULL,
+twothsevent_Sep DECIMAL NULL,
+twothsevent_Oct DECIMAL NULL,
+twothsevent_Nov DECIMAL NULL,
+twothsevent_Dec DECIMAL NULL,
+twotheighteen_Jan DECIMAL NULL,
+twotheighteen_Feb DECIMAL NULL,
+twotheighteen_Mar DECIMAL NULL
+);
+
+GRANT ALL PRIVILEGES ON DATABASE strava_zillow to tom;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO tom;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO tom;
+
+COPY zipstats FROM '/Capstone/data/zipstats.csv' WITH CSV HEADER;
+COPY zillow_median_sqft FROM '/Capstone/data/zillow_median_sqft.csv' WITH CSV HEADER;
+COPY zillow_median_price FROM '/Capstone/data/zillow_median_price.csv' WITH CSV HEADER;
+COPY zillow_zhvi FROM '/Capstone/data/zillow_zhvi.csv' WITH CSV HEADER;
+
+
+--Some useful queries
+--Metro - unique list
+
+WITH t1 AS (SELECT segment.zipcode, zillow_median_price.metro
+FROM segment
+LEFT JOIN zillow_median_price
+ON segment.zipcode = zillow_median_price.zipcode)
+SELECT DISTINCT t1.metro
+FROM t1;
+
+
+--Get segments with missing segment details
+
+SELECT segment.seg_id
+FROM segment
+LEFT JOIN segment_details
+ON segment.seg_id = segment_details.seg_id
+WHERE segment_details.seg_id IS NULL;
+
+
+
+--Zipcode, segct, Metro
+
+WITH t1 AS (SELECT zipcode, count(zipcode) as segct, sum(segment_details.athlete_count) as se
+FROM segment
+INNER JOIN segment_details
+ON segment.seg_id = segment_details.seg_id
+GROUP BY zipcode)
+SELECT t1.zipcode, t1.segct, zillow_median_price.twotheighteen_Feb, zillow_median_price.metro
+FROM t1
+INNER JOIN zillow_median_price
+ON t1.zipcode = zillow_median_price.zipcode;
+
+
+
+--Zipcode, segct, segathct, percapita_segusers, percapita_segs, zippopulation, metro, zip_med_homeprice
+
+WITH t1 AS (SELECT zipcode, count(zipcode) as segct, sum(segment_details.athlete_count) as segathct
+FROM segment
+INNER JOIN segment_details
+ON segment.seg_id = segment_details.seg_id
+GROUP BY zipcode),
+t2 AS (SELECT zipcode, y_2016
+FROM zipstats),
+t3 AS (SELECT zipcode, metro,zhvi
+FROM zillow_zhvi
+ORDER BY zipcode)
+SELECT t1.zipcode, t1.segct, t1.segathct, (t1.segct*t1.segathct)/cast(t2.y_2016 as decimal) as percapita_segusers, t1.segct/cast(t2.y_2016 as decimal) as percapita_segs, t2.y_2016, t3.metro, t3.zhvi as med_price
+FROM t1
+INNER JOIN t2
+ON t1.zipcode = t2.zipcode
+INNER JOIN t3
+ON t3.zipcode = t2.zipcode
+ORDER BY med_price DESC;
+
+
+--lat, long, zipcode, metro in Austin
+
+SELECT segment.start_lat, segment.start_long, segment.zipcode, zillow_zhvi.metro
+FROM segment
+INNER JOIN zillow_zhvi
+ON segment.zipcode = zillow_zhvi.zipcode
+WHERE metro = 'Austin';
