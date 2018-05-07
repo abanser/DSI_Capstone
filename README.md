@@ -1,4 +1,4 @@
-# <center> <img src="images/Logo_Strava.png" width="250" height="125" /> meets <img src="images/Logo_Zillow.png" width="280" height="70" /> </center>
+# <center> <img src="images/Logo_Strava.png" width="350" height="205" /> meets <img src="images/Logo_Zillow.png" width="480" height="130" /> </center>
 
 
 #### Summary
