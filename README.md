@@ -27,4 +27,4 @@ Author: Ryan Baumann's [athletedataviz](https://www.ryanbaumann.com/blog/2016/4/
 Find below biking and running segment concentrations in Austin
 
 
-<img src="images/Strava_Biking_Segments.png" width="450" height="425" />  <img src="images/Strava_Running_Segments.png" width="450" height="425" />
+<img src="images/Strava_Biking_Segments.png" width="400" height="375" />  <img src="images/Strava_Running_Segments.png" width="400" height="375" />
