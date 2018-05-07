@@ -197,14 +197,14 @@ def getdetails(segid):
  
 def main():
     
-    #Hard coded bounds for several city limits
+    #Hard coded bounds for city limits
     #See City_Bounds.txt file for more bounds
     TXbounds=[29.7996,-98.188,30.6759,-97.2989]
     
     #Vary splits and bounds to get more segments
 
     print ('Updating segment table')
-    getsegs(TXbounds, 65)
+    getsegs(TXBounds, 65)
    
     print ('Updating segment details table')
     getsegdetails()

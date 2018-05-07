@@ -1,46 +1,30 @@
-# <center> Final Proposal for Capstone </center>
-
-## <center> Strava meets Zillow </center>
-
+# <center> <img src="images/Logo_Strava.png" width="250" height="125" /> meets <img src="images/Logo_Zillow.png" width="280" height="70" /> </center>
 
 
 #### Summary
- My Capstone project researches the correlation between workout habits of the population of Austin, TX as modeled by Strava segment data and real estate prices as aggregated by Zillow.
+ My Capstone project researches the correlation between workout habits of a population as modeled by Strava segment data and real estate prices as aggregated by Zillow.
 
-#### Background Research
- Several research studies have been done on the effect of proximity to parks and green spaces on real estate value. A few examples are listed below. 
+ Strava is a fitness app used by people to keep track of their running and biking activitiy. Strava users can create segments, which are sections in the user's path used to track improvement overtime and challenge other users. I will use segment concentration to quantify workout activity. Zillow is a real estate website. I will get information about median home prices by zipcode from Zillow.
 
-  - [Neighborhood parks and residential property values in Greenville, SC](https://ageconsearch.umn.edu/bitstream/15446/1/33030487.pdf)
-  - [Property Prices and Urban Forest Amenities](http://digilib.itb.ac.id/files/JBPTITBCHE/disk1/49/jbptitbche-gdl-jou-2004-liisatyrva-2438-property-s.pdf)
-  - [Assessing the Effect of Parks on Surrounding
-Property Values Using Hedonic Models and
-Multilevel Models](https://dc.uwm.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&httpsredir=1&article=2296&context=etd)
+#### Motivation
 
-    The main conclusion from these studies is that proximity to parks are mostly benefitial for real estate value. However, if     parks are too big or too busy, the effect can be negative. While I expect the presence of parks to be a factor in the         workout habits of the population I am studying, the question I hope to answer extends to an entire city, including the     population and real estate not close to parks. I hope to find something interesting after overlaying these sets of data
+Predicting house prices is hard. It's a problem many are trying to solve in the multibillion dollar real estate industry. Recently Zillow setup a [Kaggle competition](https://www.kaggle.com/c/zillow-prize-1) which awarded $1,000,000 to the top person or team who could help improve it's zestimate home price metric. I hope to add to the conversation about potential predictors that can be used to improve accuracy of existing models.
 
-#### Usefulness
-
- The results of this project can be useful for
-  - Strava: By leveraging the data they generate in a creative way outside their current business model, Strava can gain more business value.
-  - Zillow: By including variables of workout habits in their datasets, Zillow can potentially augment existing models
-  - City of Austin: The City of Austin can get insights into where to build new parks for the city
+My intuition going into this project is that there is a positive correlation between house prices and workout habits of a population.
 
 
-#### Presentation
- Presentation slides and D3 or Bokeh visualization given the time
-
-
-#### Data Sources
- My data sources are Zillow, Strava API, Google geocoding API and US census bureau. After my first pass run, I have several thousand segment data points. I will store my data in a PostGres SQL database.
-
-
-#### Potential Problems
- Potential problems are not getting enough data to draw a conclusion on my initial hypothesis. If I don't get enough data from Austin, I will consider running the analysis on a larger city.
-
-
-#### What Next?
- I have already downloaded segment data from Strava and house price data from Zillow. I have created a few initial plots. See below - The plot indicates Strava running segments in Austin, TX. My next step is to merge these data and start analyzing them.
+#### Workflow
+ ![workflow](images/workflow.png)
 
 
 
-![Screenshot](images/Strava_Running_Segments.png)
+#### Strava API struggles
+Strava's API return the top 10 segments within a boundary sent to the API. In order to get as many segments as possible, I split the city boundary into tiny sections. I used the code from
+
+Author: Ryan Baumann's [athletedataviz](https://www.ryanbaumann.com/blog/2016/4/10/on-caching-how-advs-segments-works)
+
+#### Segment concentration by type - Austin
+Find below biking and running segment concentrations in Austin
+
+
+<img src="images/Strava_Biking_Segments.png" width="450" height="425" />  <img src="images/Strava_Running_Segments.png" width="450" height="425" />
