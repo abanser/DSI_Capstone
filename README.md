@@ -31,3 +31,52 @@ Find below biking and running segment concentrations in Austin
 <figcaption>Running Segments</figcaption>
 <img src="images/Strava_Running_Segments.png" width="420" height="390" />
 </figure>
+
+From the plots, I can deduce that Strava users do not always bike where they live, but they run where they live. So I believe looking only at running segments will give me better insight.
+
+#### ANALYSIS
+
+After collecting data from several cities, I realized that I did not have enough information about most of the cities to gain meaningful insights. For example, for many of the cities, I did not have enough segments per zipcode. See below plot of segments per zipcode for 5 cities. From this plot, the only 2 cities I kept are Austin and Seattle. The other cities had very few segments per zipcode as seen by the broad section of the violin plots
+
+
+INSER VIOLIN PLOT there
+
+
+In the end, I analysed data from only 4 cities
+
+- Austin
+- Seattle
+- Charlotte
+- Birmingham
+
+Find below the plots for these cities with X axis - Segments per zipcode per capita and Y axis - Median prices per zipcode. For these 4 cities, my correlation coefficients were in the 0.7 range indicating a positive correlation.
+
+
+INSERT PLOTS HERE
+
+
+#### NEXT STEPS
+
+- Collect more running data. Try other fitness apps
+- Generate features on a more granular level for houses e.g
+  - \# of runners within X miles
+  - \# of segments within X miles
+  - Distance to segments
+- Add these features to existing home price prediction models and see if I get any improvements in prediction
+- Investigate if workout activity can be a leading indicator in determining house prices
+
+
+#### Repo structure
+
+data --> zillow_median_price.csv - Zillow data with median home prices<br />
+data --> zillow_median_sqft.csv - Zillow data with median home price per sqft<br />
+data --> zillow_zhvi.csv - Zillow data with zhvi (Zillow median home price metric) which I used for my analysis<br />
+data --> zipstats.csv - Census data with population per zipcode
+
+
+src --> CityBounds.txt - File with hard coded city bounds I used for Strava API <br />
+src --> EDA.ipynb - Jupyter notebook with EDA analysis<br />
+src --> SQL_Queries.sql - SQL queries used to create database tables and search for data during analysis<br />
+src --> Strava_Data_Collection.py - Python file to harvest Strava and Geocodio api data and save to PostgreSQL database on AWS<br />
+
+images - Images used in README
