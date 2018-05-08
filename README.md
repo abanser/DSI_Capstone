@@ -1,7 +1,7 @@
 # <center> <img src="images/Logo_Strava.png" width="330" height="185" /> meets <img src="images/Logo_Zillow.png" width="450" height="110" /> </center>
 
 
-#### Summary
+### Summary
  My Capstone project researches the correlation between workout habits of a population as modeled by Strava segment data and real estate prices as aggregated by Zillow.
 
  Strava is a fitness app used by people to keep track of their running and biking activitiy. A Strava user can create segments, which are sections in the user's path used to track improvement overtime and challenge other users. I will use segment concentration to quantify workout activity. Zillow is a real estate website. I will get information about median home prices by zipcode from Zillow.
@@ -27,19 +27,22 @@ Find below biking and running segment concentrations in Austin
 
 <figure>
 <figcaption>Biking Segments</figcaption>
-<img src="images/Strava_Biking_Segments.png" width="420" height="390" />
+<img src="images/Strava_Biking_Segments.png" width="520" height="460" />
 <figcaption>Running Segments</figcaption>
-<img src="images/Strava_Running_Segments.png" width="420" height="390" />
+<img src="images/Strava_Running_Segments.png" width="520" height="460" />
 </figure>
 
 From the plots, I can deduce that Strava users do not always bike where they live, but they run where they live. So I believe looking only at running segments will give me better insight.
 
-#### ANALYSIS
+### Analysis
 
 After collecting data from several cities, I realized that I did not have enough information about most of the cities to gain meaningful insights. For example, for many of the cities, I did not have enough segments per zipcode. See below plot of segments per zipcode for 5 cities. From this plot, the only 2 cities I kept are Austin and Seattle. The other cities had very few segments per zipcode as seen by the broad section of the violin plots
 
 
-INSER VIOLIN PLOT there
+<figure>
+<figcaption>\# of segments per zipcode by metro</figcaption>
+<img src="images/Segment_Distribution_city.png" width="645" height="418" >
+</figure>
 
 
 In the end, I analysed data from only 4 cities
@@ -52,17 +55,23 @@ In the end, I analysed data from only 4 cities
 Find below the plots for these cities with X axis - Segments per zipcode per capita and Y axis - Median prices per zipcode. For these 4 cities, my correlation coefficients were in the 0.7 range indicating a positive correlation.
 
 
-INSERT PLOTS HERE
+
+<img src="images/Austin_plot.png" width="412.5" height="448.5" >
+<img src="images/Seattle_plot.png" width="412.5" height="448.5">
+
+<img src="images/Charlotte_plot.png" width="412.5" height="448.5">
+<img src="images/Birmingham_plot.png" width="412.5" height="448.5">
 
 
-#### NEXT STEPS
+
+#### Next steps
 
 - Collect more running data. Try other fitness apps
 - Generate features on a more granular level for houses e.g
   - \# of runners within X miles
   - \# of segments within X miles
   - Distance to segments
-- Add these features to existing home price prediction models and see if I get any improvements in prediction
+- Add these features to existing home price prediction models and see if I get any improvement in predictions
 - Investigate if workout activity can be a leading indicator in determining house prices
 
 
