@@ -56,12 +56,16 @@ Find below the plots for these cities with X axis - Segments per zipcode per cap
 
 
 
+
+<p float="left">
 <img src="images/Austin_plot.png" width="412.5" height="448.5" >
 <img src="images/Seattle_plot.png" width="412.5" height="448.5">
+</p>
 
+<p float="left">
 <img src="images/Charlotte_plot.png" width="412.5" height="448.5">
 <img src="images/Birmingham_plot.png" width="412.5" height="448.5">
-
+</p>
 
 
 #### Next steps
