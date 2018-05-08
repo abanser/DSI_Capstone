@@ -25,8 +25,6 @@ Strava's API returns the top 10 segments within a boundary. In order to get as m
 Find below biking and running segment concentrations in Austin
 
 
+<p style="float: left; font-size: 12pt; text-align: center; width: 45%; margin-right: 1%; margin-bottom: 0.5em;">Biking Segments<img src="images/Strava_Biking_Segments.png" style="width: 100%"></p>
 
-
-<p style="float: left; font-size: 12pt; text-align: center; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">Caption<img src="images/Strava_Biking_Segments.png" style="width: 100%"></p>
-
-<p style="float: left; font-size: 12pt; text-align: center; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">Caption<img src="images/Strava_Running_Segments.png" style="width: 100%"></p>
+<p style="float: left; font-size: 12pt; text-align: center; width: 46%; margin-right: 1%; margin-bottom: 0.5em;">Running Segments<img src="images/Strava_Running_Segments.png" style="width: 100%"></p>
