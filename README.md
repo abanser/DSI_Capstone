@@ -40,7 +40,7 @@ Biking Segments             | Running Segments
 
 
 
-From the plots, I can deduce that Strava users do not always bike where they live, but they run where they live. So I believe looking only at running segments will give me better insight.
+From the plots, I can deduce that Strava users do not generally bike where they live, but they tend to run where they live. So I believe looking only at running segments will give me better insight.
 
 ### Analysis
 
