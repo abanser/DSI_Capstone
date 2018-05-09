@@ -13,9 +13,6 @@ Predicting house prices is hard. It's a problem many are trying to solve in the 
 My intuition going into this project is that there is a positive correlation between house prices and workout habits of a population.
 
 
-#### Workflow
- ![workflow](images/workflow.png)
-
 
 
 #### Strava API challenges
@@ -42,6 +39,11 @@ Biking Segments             | Running Segments
 
 From the plots, I can deduce that Strava users do not generally bike where they live, but they tend to run where they live. Therefore I used only running segments for my analysis.
 
+
+
+#### Workflow
+ ![workflow](images/workflow.png)
+ 
 ### Analysis
 
 After collecting data from several cities, I realized that I did not have enough information about most of the cities to gain meaningful insights. For example, for many of the cities, I did not have enough segments per zipcode. See below plot of segments per zipcode for 5 cities. From this plot, the only 2 cities I kept are Austin and Seattle. The other cities had very few segments per zipcode as seen by the broad section of the violin plots
