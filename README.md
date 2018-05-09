@@ -40,7 +40,7 @@ Biking Segments             | Running Segments
 
 
 
-From the plots, I can deduce that Strava users do not generally bike where they live, but they tend to run where they live. So I believe looking only at running segments will give me better insight.
+From the plots, I can deduce that Strava users do not generally bike where they live, but they tend to run where they live. Therefore I used only running segments for my analysis.
 
 ### Analysis
 
@@ -48,7 +48,7 @@ After collecting data from several cities, I realized that I did not have enough
 
 
 <figure>
-<figcaption>\# of segments per zipcode by metro</figcaption>
+<figcaption># of segments per zipcode by metro</figcaption>
 <img src="images/Segment_Distribution_city.png" width="645" height="418" >
 </figure>
 
