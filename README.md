@@ -19,18 +19,26 @@ My intuition going into this project is that there is a positive correlation bet
 
 
 #### Strava API challenges
-Strava's API returns the top 10 segments within a boundary. In order to get as many segments as possible, I split the city's bounding box into sub sections. I used the code from Ryan Baumann's atletedataviz project, varying split sizes during each run.
+Strava's API returns the top 10 segments within a boundary.
+
+
+
+ ![workflow](images/top10segments.png)
+
+
+
+In order to get as many segments as possible, I split the city's bounding box into sub sections. I used the code from Ryan Baumann's atletedataviz project, varying split sizes during each run.
+
 
 #### Segment concentration by type - Austin
 Find below biking and running segment concentrations in Austin
 
 
-<figure>
-<figcaption>Biking Segments</figcaption>
-<img src="images/Strava_Biking_Segments.png" width="520" height="460" />
-<figcaption>Running Segments</figcaption>
-<img src="images/Strava_Running_Segments.png" width="520" height="460" />
-</figure>
+Biking Segments             | Running Segments
+:-------------------------:|:-------------------------:
+![Biking segments Austin](images/Strava_Biking_Segments.png)  |  ![Running segments Austin](images/Strava_Running_Segments.png)
+
+
 
 From the plots, I can deduce that Strava users do not always bike where they live, but they run where they live. So I believe looking only at running segments will give me better insight.
 
